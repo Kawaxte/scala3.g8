@@ -1,9 +1,10 @@
 // For more information on writing tests, see
 // https://scalameta.org/munit/docs/getting-started.html
 class MySuite extends munit.FunSuite {
-  test("example test that succeeds") {
-    val obtained = 42
-    val expected = 42
-    assertEquals(obtained, expected)
+  def add(left: Int, right: Int) = left + right
+
+  test("hello") {
+    val result = add(2, 2)
+    assert(result == 4)
   }
 }
