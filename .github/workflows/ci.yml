@@ -22,8 +22,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        scala: [2.12.19]
-        java: [temurin@8, temurin@11, temurin@17]
+        scala: [3.4.2]
+        java: [zulu@8, zulu@11, zulu@17, zulu@21]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout current branch (full)
@@ -31,28 +31,35 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Java (temurin@8)
-        if: matrix.java == 'temurin@8'
+      - name: Setup Java (zulu@8)
+        if: matrix.java == 'zulu@8'
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: zulu
           java-version: 8
           cache: sbt
 
-      - name: Setup Java (temurin@11)
-        if: matrix.java == 'temurin@11'
+      - name: Setup Java (zulu@11)
+        if: matrix.java == 'zulu@11'
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: zulu
           java-version: 11
           cache: sbt
 
-      - name: Setup Java (temurin@17)
-        if: matrix.java == 'temurin@17'
+      - name: Setup Java (zulu@17)
+        if: matrix.java == 'zulu@17'
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: zulu
           java-version: 17
+          cache: sbt
+      - name: Setup Java (zulu@21)
+        if: matrix.java == 'zulu@21'
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: 21
           cache: sbt
 
       - name: Check that workflows are up to date
