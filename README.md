@@ -25,5 +25,5 @@ This template is distributed without any warranty. See <http://creativecommons.o
 [g8]: http://www.foundweekends.org/giter8/
 [Scala 3]: http://dotty.epfl.ch/
 [Nicolas Stucki]: https://github.com/nicolasstucki
-[Kawaxte]: https://githubn.com/Kawaxte
+[Kawaxte]: https://github.com/Kawaxte
 
